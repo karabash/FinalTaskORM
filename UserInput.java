@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class UserInput {
@@ -5,22 +6,35 @@ public class UserInput {
 	private String chooseTable;
 	protected int intUserInput;
 	private int choosenAltarnative;
+	int car = myEnum.Car.getValue();
+	int origin = myEnum.ORIGIN.getValue();
+	int person = myEnum.PERSON.getValue();
+	final String carStr = "Car";
+	final String originStr = "Origin";
+	final String personStr = "Origin";
+	final int create =1;
+	final int delete =2;
+	final int search =3;
+	final int update =4;
+	final int yes =1;
+
+	//	String carStr = myEnum.Car.toString();
 
 
-	
+
 	public void userInput() {
 		System.out.println("Choose a table\n1)Cars\n2)Origin\n3)Person");
 		intUserInput = input.nextInt();
 		input.nextLine();
-		if(intUserInput==1){
-			setChooseTable("Car");
+		if(intUserInput==car){
+			setChooseTable(carStr);
 
 		}
-		else if(intUserInput==2){
-			setChooseTable("Origin");
+		else if(intUserInput==origin){
+			setChooseTable(originStr);
 
 		}
-		else if(intUserInput==3){
+		else if(intUserInput==person){
 			setChooseTable("Person");
 		}
 		else{
@@ -30,38 +44,38 @@ public class UserInput {
 
 
 	}
-	
+
 	public boolean quit(){
 		boolean returnValue = true;
 		System.out.println("Do you wanna quit\n1)Yes\n2)No");
 		int  userChoosen = input.nextInt();
-		if(userChoosen ==1){
+		if(userChoosen ==yes){
 			System.out.println("By!");
 			returnValue = false;
 		}
 		else {
 			return returnValue;
 		}
-		 return returnValue;
+		return returnValue;
 	}
-	
+
 	public int crud(){
-		System.out.println("Choose a table\n1)Create\n2)Delete\n3)Search\n4)Uppdate");
+		System.out.println("Choose an altarnative\n1)Create\n2)Delete\n3)Search\n4)Uppdate");
 		intUserInput = input.nextInt();
-		if(intUserInput==1){
-			setChoosenAltarnative(1);
+		if(intUserInput==create){
+			setChoosenAltarnative(create);
 			return getChoosenAltarnative();
 		}
-		else if(intUserInput==2){
-			setChoosenAltarnative(2);
+		else if(intUserInput==delete){
+			setChoosenAltarnative(delete);
 			return getChoosenAltarnative();
 		}
-		else if(intUserInput==3){
-			setChoosenAltarnative(3);
+		else if(intUserInput==search){
+			setChoosenAltarnative(search);
 			return getChoosenAltarnative();
 		}
-		else if(intUserInput==4){
-			setChoosenAltarnative(4);
+		else if(intUserInput==update){
+			setChoosenAltarnative(update);
 			return getChoosenAltarnative();
 		}
 
@@ -80,14 +94,14 @@ public class UserInput {
 	public void setChooseTable(String chooseTable) {
 		this.chooseTable = chooseTable;
 	}
-	
+
 	public int getChoosenAltarnative() {
 		return choosenAltarnative;
 	}
 	public void setChoosenAltarnative(int choosenAltarnative) {
 		this.choosenAltarnative = choosenAltarnative;
 	}
-		
+
 
 }
 

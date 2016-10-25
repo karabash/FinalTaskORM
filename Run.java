@@ -1,20 +1,20 @@
-import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 
-public class Run {
+public class Run{
 
 	public  Run() throws ClassNotFoundException {
 		UserInput user = new UserInput();
 		SessionFactory factory = null;
 		Session session;
-
-		boolean check = true;
 		Car car =  new Car();
 		Person person = new Person();
 		Origin origin = new Origin();
+		
+		boolean check = true;
 
 		final String strCar = "Car";
 		final int CREATE = 1;
@@ -40,7 +40,6 @@ public class Run {
 				if(user.getChooseTable().equals(strCar) && user.getChoosenAltarnative()==CREATE){
 
 					car.create();
-					System.out.println("Saving the person...");
 					session.save(car);
 					car.read(user.getChooseTable(), session);
 					check =  user.quit();
